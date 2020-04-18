@@ -1,0 +1,42 @@
+! Xft settings ---------------------------------------------------------
+Xft.autohint:   0
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+Xft.lcdfilter:  lcddefault
+
+! urxvt
+URxvt*buffered: true
+URxvt*cursorBlink: true
+URxvt*font:  xft:noto Mono:size=10:antialias=true,xft:WenQuanYi Micro Hei Mono:regular:size=12:minspace=true
+URxvt*depth: 32
+URxvt*background: rgba:1111/1111/1111/dddd
+
+URxvt*letterSpace:   -1             ! xft adjustment (for vanilla urxvt)
+URxvt*lineSpace:    0.9             ! pixels between lines for added readability
+!URxvt*letterSpace: 0.8
+!URxvt*lineSpace:   1.1
+
+URxvt*borderless: 1
+URxvt*scrollBar: false
+URxvt*loginShell: true
+
+URxvt.secondaryScreen: 1
+Urxvt*secondaryScroll: 0
+URxvt.secondaryWheel: 1
+
+URxvt.scrollWithBuffer: true
+
+URxvt*saveLines: 0
+URxvt*termName: rxvt-unicode
+URxvt.perl-ext-common: default,matcher,selection-to-clipboard
+URxvt.matcher.button: 1
+
+! copy on select
+URxvt.clipboard.autocopy: true
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+
+#include ".config/urxvt.badwolf"
