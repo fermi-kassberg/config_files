@@ -1,3 +1,3 @@
-if [ -f "${HOME}/.bash.ps1" ]; then
-  source "${HOME}/.bash.ps1"
+if [ -f "${HOME}/.set_ps1.sh" ]; then
+  source "${HOME}/.set_ps1.sh"
 fi
