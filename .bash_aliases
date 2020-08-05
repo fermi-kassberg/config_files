@@ -32,10 +32,6 @@ alias ll='ls -l'                              # long list
 alias la='ls -Al'                              # all but . and ..
 # alias l='ls -CF'                              #
 
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-
 function git() {
   if [ $# -gt 0 ] && [ "$1" == "diff" ] ; then
      shift
