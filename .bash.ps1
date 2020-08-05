@@ -4,10 +4,8 @@ __prompt_command() {
     local exit_code="$?"
     local host_name="$(hostname)"
 
-    # set color vars
-    local red='\e[31m'
-    local gre='\e[92m'
-    local blue='\e[34m'
+    # set color vars https://misc.flogisoft.com/bash/tip_colors_and_formatting
+    local red='\e[31m' green='\e[92m' blue='\e[34m' yellow='\e[93m'
     local inv='\e[7m'
 
     # set reset var
@@ -20,14 +18,14 @@ __prompt_command() {
     PS1=""
 
     #
-    PS1+="$inv\h$rst "
+    PS1+="[$green\h$rst] "
 
     # git branch + dir
-    PS1+="[ \w ] "; if [ -n "$git" ]; then PS1+="$blue*$git$rst "; fi
+    PS1+="[\e[100m\w$rst"; if [ -n "$git" ]; then PS1+=" <> \e[100m$git$rst] "; else PS1+="] "; fi
 
     # datetime
-    local date_time="$(date +'%:::z-%H:%M')"
-    PS1+="$gre$date_time $rst"
+    local date_time="$(date +'%b%d%Z')"
+    PS1+="\e[94m$date_time $rst"
 
     # errorcode
     if [ $exit_code != 0 ]; then PS1+="$red$exit_code$rst "; fi
